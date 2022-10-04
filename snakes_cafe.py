@@ -12,17 +12,6 @@ def start_view():
             'Entress': ["Salmon", "Steak", "Meat Tornado", "A Literal Garden"],
             'Desserts': ["Ice cream", "Cake", "Pie"],
             'Drinks': ["Coffee", "Tea", "Unicorn Tears"]}
-    """
-     for key in menu:
-        print(key)
-        print("----------")
-        count = 0
-        for value in menu.values():
-         print(menu[key])
-         count +=1
-         if count > 0:
-            break
-    """
 
     for key in menu:
         print(key)
@@ -37,11 +26,15 @@ def start_view():
     print("*******************************************")
     print(">", end=' ')
     Counter = 0
-    # user_oreder = input()
+    user_oreder = input()
+   
+    
 
     # if user_oreder not in menu.values() and user_oreder != "quit":
            # print("please enter dish from this menu!")
-    list = []
+    list = ["Wings", "Cookies", "Spring Rolls","Salmon", "Steak", "Meat Tornado", "A Literal Garden","Ice cream", "Cake", "Pie","Coffee", "Tea", "Unicorn Tears"]
+    
+    """
     while True :
         user_oreder = input()
 
@@ -55,11 +48,11 @@ def start_view():
         for item in menu.values():
              if user_oreder in item:
                 Counter +=1
-                if Counter == 1:
-                    print(f"** {Counter} one order of {user_oreder} have been added to your meal **")
+                if Counter >= 1:
+                    print(f"** 1 order of {user_oreder} have been added to your meal **")
                    
-                elif Counter > 1:
-                    print(f"** {Counter} orders of {user_oreder} have been added to your meal **")
+                #elif Counter > 1:
+                    #print(f"** {Counter} orders of {user_oreder} have been added to your meal **")
                 #elif user_oreder not in item and user_oreder != "quit":
                  #print("please enter dish from this menu!")
 
@@ -67,16 +60,25 @@ def start_view():
 
         if user_oreder == "quit":
          break
-        """
-        for menu_item in menu.values():
-         for list_item in range(len(list)):
-          if  list_item != menu_item:
-            list.remove(list_item)
-        """
+
     print("Summary of your orders is: ")
     print(*list, sep = "\n")  
+    """
 
-           
+    #while True:
+        #print(menu.values())
+    for item in range(len(list)):
+        if user_oreder == "quit":
+            break 
+        if user_oreder in list:
+            print(f"**one order of {user_oreder} has been added to your meal**")
+            user_oreder = input()
+            continue
+        else:
+            print("your order not in our menu, plz try again!")
+            user_oreder = input()
+            
+             
 
 
 
