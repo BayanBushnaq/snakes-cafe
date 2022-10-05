@@ -1,4 +1,5 @@
 from typing import Counter
+#from operator import countOf
 
 
 def start_view():
@@ -67,11 +68,29 @@ def start_view():
 
     #while True:
         #print(menu.values())
+    re = "quit"
+    summary_list=[]
     for item in range(len(list)):
         if user_oreder == "quit":
+            if len(summary_list) == 0 :
+                print("Your ordered list is empty")
+                break
+            else:
+             print("Summary of your orders is: ")
+             print(*summary_list, sep = "\n")
             break 
         if user_oreder in list:
-            print(f"**one order of {user_oreder} has been added to your meal**")
+            summary_list.append(user_oreder)
+            x = summary_list.count(user_oreder)
+            if x == 1 :
+             print(f"**{x} order of {user_oreder} has been added to your meal**")
+            else:
+                print(f"**{x} orders of {user_oreder} have been added to your meal**")
+
+            
+            for a in range(len(summary_list)):
+                if re in summary_list:
+                    summary_list.remove(re)
             user_oreder = input()
             continue
         else:
